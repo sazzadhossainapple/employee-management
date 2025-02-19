@@ -1,0 +1,333 @@
+/* profile css start */
+.button-crm {
+    background-color: #5932ea;
+    border: 1px solid #5932ea;
+    padding: 8px 25px;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #fff;
+    font-size: 16px;
+}
+.profile-container {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+}
+
+.user-profile-img {
+    display: flex;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    object-position: top;
+    border: 2px double #5932ea;
+}
+.profile-text {
+    font-size: 14px;
+}
+.badge-info {
+    background-color: #5932ea;
+}
+.user-img-container {
+    border: 3px dashed #5932ea;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding: 5px; */
+}
+.updated-img {
+    width: 192px;
+    height: 192px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.eye-icon {
+    font-size: 22px;
+    position: absolute;
+    top: 0.8rem;
+    color: var(--secondary-color);
+    right: 12px;
+    cursor: pointer;
+}
+.icon-size {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-title {
+    font-size: 20px;
+    color: #171215;
+    font-weight: 500;
+}
+.card-titles {
+    color: #333333;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+}
+.card-desc {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+/* overview css start */
+.overview-card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.overview-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+}
+.overview-icon {
+    height: 38px;
+    width: 38px;
+}
+.overview-icon img {
+    height: 100%;
+    width: 100%;
+}
+.overview-count {
+    color: #171215;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    margin-top: 12px;
+    margin-bottom: 5px;
+}
+.overview-text {
+    color: #999999;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 0px;
+}
+.chart-notification {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.chart-left {
+    width: 60%;
+    padding: 20px;
+}
+.border-radius-12 {
+    border-radius: 12px;
+}
+.padding-20 {
+    padding: 30px;
+}
+.notification-right {
+    width: 40%;
+    padding: 20px;
+}
+.target-content {
+    margin-bottom: 2rem;
+}
+.overview-target-title {
+    color: #171215;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.input-text-14 {
+    font-size: 14px;
+}
+.select-focus:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 1px solid #7a7a7a !important ;
+}
+.select-focus {
+    color: #7a7a7a;
+    font-weight: 500;
+    font-size: 16px;
+}
+.notification-icon-card {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.notication-bg-1 {
+    background-color: #5932ea;
+    border: 1px solid #5932ea;
+}
+.notication-border {
+    border: 1px solid #999999;
+}
+.notification-icon {
+    font-size: 24px;
+}
+.notification-color {
+    color: #171215;
+}
+.notification-content {
+    font-size: 16px;
+    color: #171215;
+    line-height: 20px;
+    font-weight: 500;
+}
+.notification-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.table-th,
+.table-td {
+    font-size: 14px;
+}
+.table-th {
+    color: #7a7a7a !important;
+}
+.table-td {
+    color: #171215 !important;
+}
+
+.input-field {
+    padding: 10px 20px;
+    border: 1px solid #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 12px;
+}
+.input-field:focus {
+    outline: none;
+}
+.input-field::placeholder {
+    color: #a1a1a1;
+}
+.filter-btn {
+    background-color: #5932ea;
+    border-radius: 12px;
+    padding: 8px 20px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    border: 0px;
+}
+
+.table-rounded {
+    border-radius: 12px;
+    margin-top: 1.5rem;
+}
+.table-radius-left {
+    border-top-left-radius: 12px !important;
+}
+.table-radius-right {
+    border-top-right-radius: 12px !important;
+}
+.table-color {
+    background-color: #5932ea !important;
+    color: #ffffff !important;
+}
+
+.page-item:first-child .page-link,
+.page-item:last-child .page-link {
+    border: 1px solid #c1dee2 !important;
+}
+.active > .page-link,
+.page-link.active {
+    background-color: #c1dee2 !important;
+    border: 1px solid #c1dee2 !important;
+}
+.page-item .page-link {
+    color: #191919 !important ;
+    font-weight: 500;
+}
+.margin-top-2 {
+    margin-top: 2rem;
+}
+
+.font-size-14 {
+    font-size: 14px;
+}
+.color-title {
+    color: #7a7a7a;
+}
+.bg-input {
+    background-color: #eeeeee;
+    border: 1px solid #eeeeee;
+}
+
+.button-crm {
+    background-color: #5932ea;
+    border: 1px solid #5932ea;
+    padding: 8px 25px;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #fff;
+    font-size: 16px;
+}
+.button-crm-2 {
+    background-color: transparent;
+    border: 1px solid #cbcbcb;
+    padding: 8px 25px;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #030a19;
+    font-size: 16px;
+}
+.error-text {
+    font-size: 14px;
+}
+.notification-left {
+    width: 83%;
+}
+.notifications-right {
+    width: 17%;
+}
+.notification-date {
+    font-size: 14px;
+    font-weight: 500;
+    color: #999999;
+}
+/* overview css end */
+
+@media only screen and (min-width: 250px) and (max-width: 575px) {
+    .notification-left {
+        width: 100%;
+    }
+    .notifications-right {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .notification-left {
+        width: 100%;
+    }
+    .notifications-right {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .notification-right {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .notification-right {
+        width: 100%;
+    }
+}

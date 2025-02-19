@@ -1,19 +1,14 @@
-import { Button, Stack } from 'react-bootstrap';
+import { Suspense } from "react";
+import Loading from "./components/loading/Loading";
+import { router } from "./routes/Routes/Routes";
+import { RouterProvider } from "react-router";
 
 function App() {
-    return (
-        <div>
-            <Stack direction="horizontal" gap={2}>
-                <Button as="a" variant="primary">
-                    Button as link
-                </Button>
-                <Button as="a" variant="success">
-                    Button as link
-                </Button>
-            </Stack>
-            ;
-        </div>
-    );
+  return (
+    <Suspense fallback={<Loading />}>
+      <RouterProvider router={router}></RouterProvider>
+    </Suspense>
+  );
 }
 
 export default App;
