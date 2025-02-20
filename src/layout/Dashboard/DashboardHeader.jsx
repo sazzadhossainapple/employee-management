@@ -124,7 +124,7 @@ const DashboardHeader = ({ isSmallMenu, toggleMenu }) => {
                             <hr />
                             <div className="d-flex align-items-center justify-content-center">
                                 <Link
-                                    to="/dashboard/notification"
+                                    to=""
                                     className="text-center text-black fw-bold"
                                     style={{ fontSize: '14px' }}
                                 >

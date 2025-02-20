@@ -34,10 +34,10 @@
 }
 .active-link {
     color: white !important; /* White color for the active link */
-    background-color: #5932ea;
+    background-color: #025864;
 }
 .active-link-submenu {
-    color: #5932ea !important;
+    color: #025864 !important;
     font-weight: 500 !important;
 }
 
@@ -97,13 +97,13 @@
     overflow-y: auto;
     height: 100%;
     border-right: 1px solid #f8f9ff;
-    margin-top: 105px;
+    margin-top: 130px;
     padding-bottom: 70px;
     transition: all 0.3s ease-in-out;
     overflow-x: hidden;
     z-index: 2;
     scrollbar-width: thin;
-    scrollbar-color: #5932ea #ffffff;
+    scrollbar-color: #025864 #ffffff;
 }
 
 #left-menu.small-left-menu,
@@ -129,7 +129,7 @@
 
 #left-menu ul li a {
     font-weight: 400;
-    color: #9197b3;
+    color: #999;
     width: 100%;
     display: inline-block;
     width: 260px;
@@ -174,12 +174,12 @@
 }
 
 #left-menu ul li a:hover {
-    background-color: #5932ea;
+    background-color: #025864;
     color: #ffffff;
 }
 
 #left-menu ul li button:hover {
-    background-color: #5932ea;
+    background-color: #025864;
 }
 
 #left-menu ul li:hover a span {
@@ -269,7 +269,7 @@
 } */
 #left-menu ul li a .submenu-texts:hover {
     color: #fff;
-    background-color: #5932ea !important;
+    background-color: #025864 !important;
 }
 
 .submenu-items {
@@ -277,19 +277,21 @@
     font-weight: 500;
 }
 .submenu-items:hover {
-    color: #5932ea !important;
+    color: #025864 !important;
     background-color: #fff !important;
 }
 
 #logo {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     top: 0;
     z-index: 2;
     left: 0;
     background-color: #fff;
     border-color: #f8f9ff;
-    height: 105px;
+    height: 130px;
     width: 280px;
     border-right: 1px solid #f8f9ff;
     z-index: 4;
@@ -301,7 +303,7 @@
     /* width: 126px;
     height: 50px; */
     display: inline-block;
-    margin-top: 35px;
+    /* margin-top: 35px; */
 }
 
 #header {
@@ -329,7 +331,7 @@
     line-height: 2em;
     padding: 0 5px;
     cursor: pointer;
-    color: #5932ea;
+    color: #025864;
 }
 
 #main-content {
@@ -382,7 +384,7 @@
 #show-lable {
     font-size: 16px;
     font-weight: 500;
-    background-color: #5932ea;
+    background-color: #025864;
     color: #ffffff;
     padding: 10px 15px;
     position: absolute;
@@ -395,7 +397,7 @@
 #show-label {
     font-size: 16px;
     font-weight: 400;
-    background-color: #5932ea;
+    background-color: #025864;
     color: #ffffff;
     padding: 10px 15px;
     position: absolute;
@@ -417,7 +419,7 @@
 }
 
 #show-label ul li {
-    background-color: #5932ea;
+    background-color: #025864;
     padding: 5px 10px;
     color: #fff;
     margin-top: 2px;

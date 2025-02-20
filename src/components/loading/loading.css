@@ -1,46 +1,46 @@
 @-webkit-keyframes loading {
     from {
-      -webkit-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
     }
     to {
-      -webkit-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
     }
-  }
-  @-moz-keyframes loading {
+}
+@-moz-keyframes loading {
     from {
-      -moz-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
     }
     to {
-      -moz-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
     }
-  }
-  @-o-keyframes loading {
+}
+@-o-keyframes loading {
     from {
-      -o-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
     }
     to {
-      -o-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
     }
-  }
-  @keyframes loading {
+}
+@keyframes loading {
     from {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
-  .abgne-loading-20140104-2 {
+}
+.abgne-loading-20140104-2 {
     position: relative;
-    height: 120px;
-    width: 120px;
+    height: 70px;
+    width: 70px;
     background: #fff;
     border-radius: 50%;
-  }
-  .abgne-loading-20140104-2 .loading {
-    border: 10px solid #5932EA;
-    border-right: 10px solid #eee;
-    border-bottom: 10px solid #eee;
+}
+.abgne-loading-20140104-2 .loading {
+    border: 5px solid #025864;
+    border-right: 5px solid #eee;
+    border-bottom: 5px solid #eee;
     height: 100%;
     width: 100%;
     border-radius: 50%;
@@ -49,8 +49,8 @@
     -ms-animation: loading 1s infinite linear;
     -o-animation: loading 1s infinite linear;
     animation: loading 1s infinite linear;
-  }
-  .abgne-loading-20140104-2 .word {
+}
+.abgne-loading-20140104-2 .word {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -61,30 +61,29 @@
     width: 100%;
     height: 100%;
     padding: 5px;
-  }
-  .word span{
+}
+.word span {
     font-weight: 700;
     font-size: 24px;
-  }
-  
-  @keyframes popup {
+}
+
+@keyframes popup {
     0%,
     100% {
-      transform: scale(1);
+        transform: scale(1);
     }
     50% {
-      transform: scale(1.2);
+        transform: scale(1.2);
     }
-  }
-  .popup-image {
+}
+.popup-image {
     max-width: 50px;
     animation: popup 1s infinite ease-in-out;
-  }
-  
-  .loading-center {
+}
+
+.loading-center {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
+}

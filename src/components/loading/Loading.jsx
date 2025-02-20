@@ -7,7 +7,7 @@ const Loading = () => {
             <div className="abgne-loading-20140104-2">
                 <div className="loading"></div>
                 <div className="word">
-                    <span>CRM</span>
+                    <span>EM</span>
                 </div>
             </div>
         </div>

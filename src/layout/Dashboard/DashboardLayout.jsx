@@ -5,49 +5,49 @@ import dahbordIcon from '../../assets/sidebarIcon/dashboard_icon.svg';
 import employeeIcon from '../../assets/sidebarIcon/employeeIcon.svg';
 import cardIcon from '../../assets/sidebarIcon/cardIcon.svg';
 import { Link, NavLink, Outlet } from 'react-router';
-import logo from '../../assets/image/employee.png';
+import logo from '../../assets/image/logo-6.png';
 
 const menuData = [
     {
         label: 'Dashboard',
         img: dahbordIcon,
         icon: '',
-        path: '/dashboard',
+        path: '/',
+        user_type: [],
+    },
+    {
+        label: 'Employee Table View',
+        img: employeeIcon,
+        icon: '',
+        path: '/employee',
         user_type: [],
     },
     {
         label: 'Employee List',
-        img: employeeIcon,
-        icon: '',
-        path: '/employee/list',
-        user_type: [],
-    },
-    {
-        label: 'Employee Card',
         img: cardIcon,
         icon: '',
-        path: '/emloyee/card',
+        path: '/employee/card',
         user_type: [],
     },
 
-    {
-        label: 'Team',
-        img: employeeIcon,
-        icon: '',
-        user_type: [],
-        submenu: [
-            {
-                label: 'All Team',
-                path: '/',
-                user_type: [],
-            },
-            {
-                label: 'Add Tema',
-                path: '/',
-                user_type: [],
-            },
-        ],
-    },
+    // {
+    //     label: 'Team',
+    //     img: employeeIcon,
+    //     icon: '',
+    //     user_type: [],
+    //     submenu: [
+    //         {
+    //             label: 'All Team',
+    //             path: '/team',
+    //             user_type: [],
+    //         },
+    //         {
+    //             label: 'Add Tema',
+    //             path: '/team/add',
+    //             user_type: [],
+    //         },
+    //     ],
+    // },
 ];
 
 const DashboardLayout = () => {
@@ -157,15 +157,38 @@ const DashboardLayout = () => {
     return (
         <div className="body">
             <div id="logo" className={isSmallMenu ? 'small-left-menu' : ''}>
-                <span className="fw-bold">
-                    {/* <img
-                        height="40"
-                        width="40"
-                        src={logo}
-                        alt="logo"
-                        loading="lazy"
-                    /> */}
-                    <span>Employee Management </span>
+                <span className="fw-bold d-flex  gap-2">
+                    <span
+                        style={{
+                            border: '3px solid #025864',
+                            borderRadius: '5px',
+                        }}
+                    >
+                        <img
+                            height="50"
+                            width="50"
+                            src={logo}
+                            alt="logo"
+                            loading="lazy"
+                            className=""
+                        />
+                    </span>
+
+                    <span className="d-flex flex-column">
+                        <span style={{ fontSize: '25px' }}>Employee</span>{' '}
+                        <span
+                            className="d-inline-block fw-normal"
+                            style={{
+                                fontSize: '12px',
+                                fontStyle: 'italic',
+                                marginTop: '-2px',
+                                color: '#025864',
+                            }}
+                        >
+                            {' '}
+                            Management
+                        </span>{' '}
+                    </span>
                 </span>
                 <span className="small-logo d-none">EM</span>
             </div>
