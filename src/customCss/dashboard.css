@@ -6,15 +6,18 @@
     margin-top: 2rem;
 }
 .containers {
-    height: 450px;
+    /* height: 450px; */
     width: 300px;
-    /* box-shadow: 0 10px 20px black; */
     background-size: cover;
     justify-content: center;
     align-items: center;
     text-align: center;
     overflow: hidden;
-    font-family: 'Abel', sans-serif;
+}
+.padding-card {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 35px;
 }
 
 .image {

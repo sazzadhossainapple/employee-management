@@ -14,7 +14,7 @@ const EmployeeCardList = () => {
                                 <img src={profile} alt="" />
                             </div>
                         </div>
-                        <div className="px-3">
+                        <div className="padding-card">
                             <h3 className="h3 fw-bold">Muhammad Farhan</h3>
                             <h3 className="title">johndoe@example.com</h3>
                             <p className="p m-0">1234567890</p>
@@ -36,7 +36,7 @@ const EmployeeCardList = () => {
                                 <img src={profile} alt="" />
                             </div>
                         </div>
-                        <div className="px-3">
+                        <div className="padding-card">
                             <h3 className="h3 fw-bold">Muhammad Farhan</h3>
                             <h3 className="title">johndoe@example.com</h3>
                             <p className="p m-0">1234567890</p>
@@ -58,7 +58,7 @@ const EmployeeCardList = () => {
                                 <img src={profile} alt="" />
                             </div>
                         </div>
-                        <div className="px-3">
+                        <div className="padding-card">
                             <h3 className="h3 fw-bold">Muhammad Farhan</h3>
                             <h3 className="title">johndoe@example.com</h3>
                             <p className="p m-0">1234567890</p>
@@ -80,7 +80,7 @@ const EmployeeCardList = () => {
                                 <img src={profile} alt="" />
                             </div>
                         </div>
-                        <div className="px-3">
+                        <div className="padding-card">
                             <h3 className="h3 fw-bold">Muhammad Farhan</h3>
                             <h3 className="title">johndoe@example.com</h3>
                             <p className="p m-0">1234567890</p>
@@ -102,7 +102,7 @@ const EmployeeCardList = () => {
                                 <img src={profile} alt="" />
                             </div>
                         </div>
-                        <div className="px-3">
+                        <div className="padding-card ">
                             <h3 className="h3 fw-bold">Muhammad Farhan</h3>
                             <h3 className="title">johndoe@example.com</h3>
                             <p className="p m-0">1234567890</p>
