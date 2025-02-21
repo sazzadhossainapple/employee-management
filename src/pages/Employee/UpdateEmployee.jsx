@@ -29,12 +29,15 @@ const UpdateEmployee = ({
         if (updateEmployee) {
             reset(updateEmployee);
             if (updateEmployee.image) {
-                setImagePreview(updateEmployee.image);
+                const ImageUrl = `${import.meta.env.VITE_API_KEY_URL}/${
+                    updateEmployee.image
+                }`;
+
+                setImagePreview(ImageUrl);
             }
         }
     }, [updateEmployee, reset]);
 
-    // Function to trigger file input
     const handleClickImage = () => {
         imageInputRef.current.click();
     };
@@ -73,13 +76,15 @@ const UpdateEmployee = ({
         formData.append('address', data.address);
 
         if (selectedImage) {
-            formData.append('image', selectedImage);
+            formData.append('file', selectedImage);
         }
 
         setLoading(true);
         try {
             const response = await axios.put(
-                `https://your-api-endpoint.com/api/employees/${updateEmployee.id}`,
+                `${import.meta.env.VITE_API_KEY_URL}/api/employee/${
+                    updateEmployee?._id
+                }`,
                 formData,
                 {
                     headers: {
@@ -105,7 +110,6 @@ const UpdateEmployee = ({
         }
         setLoading(false);
     };
-    console.log(updateEmployee);
     return (
         <Modal
             show={show}

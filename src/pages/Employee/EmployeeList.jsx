@@ -43,9 +43,15 @@ const EmployeeList = ({ data, slNo, getPaginationList }) => {
                             style={{ objectPosition: 'top' }}
                             width="40px"
                             height="40px"
-                            src={data?.image ? data?.image : profile}
+                            src={
+                                data?.image
+                                    ? `${import.meta.env.VITE_API_KEY_URL}/${
+                                          data?.image
+                                      }`
+                                    : profile
+                            }
                             alt="profile"
-                            className="object-fit-cover rounded-circle"
+                            className="object-fit-contain rounded-circle"
                         />
                     </div>
                 </td>

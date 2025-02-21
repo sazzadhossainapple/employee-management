@@ -5,6 +5,7 @@ import ReactPaginate from 'react-paginate';
 import { MdAddCircleOutline } from 'react-icons/md';
 import EmployeeList from './EmployeeList';
 import AddEmployee from './AddEmployee';
+import axios from 'axios';
 
 const EmployeeData = [
     {
@@ -34,59 +35,59 @@ const EmployeeData = [
 ];
 
 const Employee = () => {
-    const [allVendor, setAllVendor] = useState([]);
-    const [limit, setLimit] = useState(20);
+    const [allEmployee, setAllEmployee] = useState([]);
+    const [limit, setLimit] = useState(10);
     const [pageCount, setPageCount] = useState(1);
-    const currentPage = useRef();
+    const currentPage = useRef(1);
     const [isLoading, setIsLoading] = useState(false);
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    // pagination
-    function handlePageClick(e) {
-        currentPage.current = e.selected + 1;
-    }
-
-    // get all vendor data
-    const getPaginationList = async () => {
-        // const url = `${import.meta.env.VITE_API_KEY_URL}?page=${
-        //   currentPage.current
-        // }&limit=${limit}`;
-        // setIsLoading(true);
-        // try {
-        //   const data = await GetRequest({
-        //     url,
-        //     method: "GET",
-        //     headers: {
-        //       authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        //     },
-        //   });
-        //   // Assuming the response structure
-        //   const totalVendor = data?.data?.totalBranchLists || 0;
-        //   const totalPages = Math.ceil(totalVendor / limit);
-        //   setPageCount(totalPages);
-        //   setAllVendor(data?.data?.Branchs || []);
-        // } catch (error) {
-        //   console.error("Error fetching data:", error.message);
-        // } finally {
-        //   setIsLoading(false);
-        // }
-    };
-
     useEffect(() => {
         currentPage.current = 1;
         getPaginationList();
-    }, [limit, pageCount]);
+    }, [limit]);
 
-    //   if (isLoading) {
-    //     return (
-    //       <div className="min-vh-100 d-flex align-items-center justify-content-center">
-    //         <Loading />
-    //       </div>
-    //     );
-    //   }
+    // get all employee
+    const getPaginationList = async () => {
+        const url = `${import.meta.env.VITE_API_KEY_URL}/api/employee?page=${
+            currentPage.current
+        }&limit=${limit}`;
+
+        try {
+            const response = await axios.get(url, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            const totalEmployee = response?.data?.data?.totalEmployeeLists || 0;
+            const totalPages = Math.ceil(totalEmployee / limit);
+
+            setPageCount(totalPages);
+            setAllEmployee(response?.data?.data?.Employees || []);
+        } catch (error) {
+            console.error('Error fetching data:', error.message);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    // pagination
+    const handlePageClick = (e) => {
+        currentPage.current = e.selected + 1;
+        getPaginationList();
+    };
+
+    if (isLoading) {
+        return (
+            <div className="min-vh-100 d-flex align-items-center justify-content-center">
+                <Loading />
+            </div>
+        );
+    }
 
     return (
         <div>
@@ -176,12 +177,16 @@ const Employee = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {EmployeeData?.map((data, i) => (
+                            {allEmployee?.map((data, index) => (
                                 <EmployeeList
                                     data={data}
-                                    key={data.id}
+                                    key={data?._id}
                                     getPaginationList={getPaginationList}
-                                    slNo={i + 1}
+                                    slNo={
+                                        (currentPage.current - 1) * limit +
+                                        index +
+                                        1
+                                    }
                                 />
                             ))}
                         </tbody>
@@ -200,8 +205,8 @@ const Employee = () => {
                             </span>
                         }
                         onPageChange={handlePageClick}
-                        pageRangeDisplayed={5}
                         pageCount={pageCount}
+                        pageRangeDisplayed={5}
                         previousLabel={
                             <span
                                 className="fw-medium align-items-center gap-2 "

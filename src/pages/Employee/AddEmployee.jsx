@@ -24,7 +24,7 @@ const AddEmployee = ({ show, handleClose, getPaginationList }) => {
         imageInputRef.current.click();
     };
 
-    // Handle File Change
+    // Handle File Change// Handle File Change
     const handleFileChange = (e) => {
         const file = e.target.files[0];
         if (!file) {
@@ -59,14 +59,15 @@ const AddEmployee = ({ show, handleClose, getPaginationList }) => {
         formData.append('name', data.name);
         formData.append('email', data.email);
         formData.append('phone', data.phone);
-        formData.append('dept_id', data.dept_id);
+        formData.append('department', data.department);
         formData.append('address', data.address);
-        formData.append('image', selectedImage);
+        formData.append('file', selectedImage);
 
         setLoading(true);
+
         try {
             const response = await axios.post(
-                'https://your-api-endpoint.com/api/employees',
+                `${import.meta.env.VITE_API_KEY_URL}/api/employee`,
                 formData,
                 {
                     headers: {
@@ -168,7 +169,7 @@ const AddEmployee = ({ show, handleClose, getPaginationList }) => {
                         <select
                             className="w-100 input-field bg-input"
                             name=""
-                            {...register('dept_id', { required: true })}
+                            {...register('department', { required: true })}
                         >
                             <option value="" selected disabled>
                                 Select Department
@@ -181,7 +182,7 @@ const AddEmployee = ({ show, handleClose, getPaginationList }) => {
                             <option value="IT Support">IT Support</option>
                         </select>
 
-                        {errors.dept_id && (
+                        {errors.department && (
                             <span className="text-danger error-text">
                                 Department is required
                             </span>
