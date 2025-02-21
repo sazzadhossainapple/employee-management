@@ -68,7 +68,7 @@ const EmployeeList = ({ data, slNo, getPaginationList }) => {
                                     : profile
                             }
                             alt="profile"
-                            className="object-fit-contain rounded-circle"
+                            className="object-fit-cover rounded-circle"
                         />
                     </div>
                 </td>
