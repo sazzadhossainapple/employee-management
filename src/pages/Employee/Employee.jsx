@@ -91,7 +91,7 @@ const Employee = () => {
 
             <div className="filter-contaner mt-4">
                 <div className="row g-2">
-                    <div className="col-md-4">
+                    <div className="col-md-6">
                         <input
                             type="text"
                             name=""
@@ -102,7 +102,7 @@ const Employee = () => {
                         />
                     </div>
 
-                    <div className="col-md-3">
+                    <div className="col-md-4">
                         <select
                             className="w-100 input-field"
                             name=""
@@ -118,20 +118,6 @@ const Employee = () => {
                             <option value="Engineering">Engineering</option>
                             <option value="HR">HR</option>
                             <option value="IT Support">IT Support</option>
-                        </select>
-                    </div>
-                    <div className="col-md-3">
-                        <select
-                            className="w-100 input-field"
-                            name=""
-                            onChange={(e) => setStatus(e.target.value)}
-                            value={status}
-                        >
-                            <option value="" selected disabled>
-                                Select Status
-                            </option>
-                            <option value="true">Active</option>
-                            <option value="false">Inactive</option>
                         </select>
                     </div>
                     <div className="col-md-2">
