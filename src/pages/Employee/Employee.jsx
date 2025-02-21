@@ -7,33 +7,6 @@ import EmployeeList from './EmployeeList';
 import AddEmployee from './AddEmployee';
 import axios from 'axios';
 
-const EmployeeData = [
-    {
-        image: 'https://example.com/images/user1.jpg',
-        name: 'John Doe',
-        phone: '1234567890',
-        department: 'Sales',
-        email: 'johndoe@example.com',
-        address: '123 Main St, New York, NY 10001',
-    },
-    {
-        image: 'https://example.com/images/user2.jpg',
-        name: 'Jane Smith',
-        phone: '9876543210',
-        department: 'Marketing',
-        email: 'janesmith@example.com',
-        address: '456 Elm St, Los Angeles, CA 90012',
-    },
-    {
-        image: 'https://example.com/images/user3.jpg',
-        name: 'Robert Brown',
-        phone: '5557891234',
-        department: 'IT',
-        email: 'robertbrown@example.com',
-        address: '789 Oak St, Chicago, IL 60605',
-    },
-];
-
 const Employee = () => {
     const [allEmployee, setAllEmployee] = useState([]);
     const [limit, setLimit] = useState(10);
@@ -41,6 +14,9 @@ const Employee = () => {
     const currentPage = useRef(1);
     const [isLoading, setIsLoading] = useState(false);
     const [show, setShow] = useState(false);
+    const [department, setDepartment] = useState('');
+    const [status, setStatus] = useState('');
+    const [search, setSearch] = useState('');
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -48,13 +24,15 @@ const Employee = () => {
     useEffect(() => {
         currentPage.current = 1;
         getPaginationList();
-    }, [limit]);
+    }, [limit, department, status, search]);
 
     // get all employee
     const getPaginationList = async () => {
         const url = `${import.meta.env.VITE_API_KEY_URL}/api/employee?page=${
             currentPage.current
-        }&limit=${limit}`;
+        }&limit=${limit}&department=${department || ''}&status=${
+            status || ''
+        } &name=${search || ''}`;
 
         try {
             const response = await axios.get(url, {
@@ -80,6 +58,12 @@ const Employee = () => {
         currentPage.current = e.selected + 1;
         getPaginationList();
     };
+
+    function resetBtn() {
+        setDepartment('');
+        setStatus('');
+        setSearch('');
+    }
 
     if (isLoading) {
         return (
@@ -111,12 +95,19 @@ const Employee = () => {
                             type="text"
                             name=""
                             className="w-100 input-field"
-                            placeholder="Search by name or email"
+                            placeholder="Search by name"
+                            onChange={(e) => setSearch(e.target.value)}
+                            value={search}
                         />
                     </div>
 
                     <div className="col-md-3">
-                        <select className="w-100 input-field" name="">
+                        <select
+                            className="w-100 input-field"
+                            name=""
+                            onChange={(e) => setDepartment(e.target.value)}
+                            value={department}
+                        >
                             <option value="" selected disabled>
                                 Select Department
                             </option>
@@ -129,16 +120,24 @@ const Employee = () => {
                         </select>
                     </div>
                     <div className="col-md-3">
-                        <select className="w-100 input-field" name="">
+                        <select
+                            className="w-100 input-field"
+                            name=""
+                            onChange={(e) => setStatus(e.target.value)}
+                            value={status}
+                        >
                             <option value="" selected disabled>
                                 Select Status
                             </option>
-                            <option value="1">Active</option>
-                            <option value="0">Inactive</option>
+                            <option value="true">Active</option>
+                            <option value="false">Inactive</option>
                         </select>
                     </div>
                     <div className="col-md-2">
-                        <button className="filter-btn w-100 bg-danger">
+                        <button
+                            onClick={resetBtn}
+                            className="filter-btn w-100 bg-danger"
+                        >
                             Reset
                         </button>
                     </div>

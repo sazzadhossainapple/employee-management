@@ -72,7 +72,7 @@ const UpdateEmployee = ({
         formData.append('name', data.name);
         formData.append('email', data.email);
         formData.append('phone', data.phone);
-        formData.append('dept_id', data.dept_id);
+        formData.append('department', data.department);
         formData.append('address', data.address);
 
         if (selectedImage) {
@@ -184,7 +184,7 @@ const UpdateEmployee = ({
 
                         <select
                             className="w-100 input-field bg-input"
-                            {...register('dept_id', { required: true })}
+                            {...register('department', { required: true })}
                         >
                             <option value="" disabled>
                                 Select Department
@@ -197,7 +197,7 @@ const UpdateEmployee = ({
                             <option value="IT Support">IT Support</option>
                         </select>
 
-                        {errors.dept_id && (
+                        {errors.department && (
                             <span className="text-danger error-text">
                                 Department is required
                             </span>

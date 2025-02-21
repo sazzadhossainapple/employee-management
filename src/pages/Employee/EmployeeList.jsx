@@ -5,6 +5,7 @@ import profile from '../../assets/image/profile.webp';
 import { Tooltip } from 'react-tooltip';
 import ConfirmationDialog from '../../components/ConfirmationDialog/ConfirmationDialog';
 import UpdateEmployee from './UpdateEmployee';
+import toast from 'react-hot-toast';
 
 const EmployeeList = ({ data, slNo, getPaginationList }) => {
     const [showConfirmation, setShowConfirmation] = useState(false);
@@ -27,7 +28,23 @@ const EmployeeList = ({ data, slNo, getPaginationList }) => {
 
     // delete action
     const handleConfirmAction = () => {
-        handleCloseConfirmation();
+        fetch(`${import.meta.env.VITE_API_KEY_URL}/api/employee/${data?._id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.success) {
+                    getPaginationList();
+                    handleCloseConfirmation();
+                    toast.success(`${Name} is a Deleted`);
+                }
+            })
+            .catch((err) => {
+                toast.err(err);
+            });
     };
 
     return (
@@ -117,7 +134,7 @@ const EmployeeList = ({ data, slNo, getPaginationList }) => {
                 show={showConfirmation}
                 onClose={handleCloseConfirmation}
                 onConfirm={handleConfirmAction}
-                name="text"
+                name={data?.name}
             />
 
             <UpdateEmployee
