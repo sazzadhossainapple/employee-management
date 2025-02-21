@@ -79,18 +79,23 @@ const DashboardLayout = () => {
         };
     }, []);
 
+    // const toggleMenu = () => {
+    //     setIsSmallMenu(!isSmallMenu);
+    // };
+
+    // const toggleSubmenu = (index) => {
+    //     setActiveSubmenu((prevIndex) => (prevIndex === index ? null : index));
+    // };
     const toggleMenu = () => {
         setIsSmallMenu(!isSmallMenu);
     };
 
     const toggleSubmenu = (index) => {
-        // if (activeSubmenu === index) {
-        //   setActiveSubmenu(null);
-        // } else {
-        //   setActiveSubmenu(index);
-        // }
-
-        setActiveSubmenu((prevIndex) => (prevIndex === index ? null : index));
+        if (activeSubmenu === index) {
+            setActiveSubmenu(null);
+        } else {
+            setActiveSubmenu(index);
+        }
     };
 
     const handleMouseOver = (e, label, submenu, path) => {
@@ -157,11 +162,48 @@ const DashboardLayout = () => {
     return (
         <div className="body">
             <div id="logo" className={isSmallMenu ? 'small-left-menu' : ''}>
-                <span className="fw-bold d-flex  gap-2">
+                <span className="big-logo">
+                    <span className="fw-bold d-flex  gap-2">
+                        <span
+                            style={{
+                                border: '3px solid #025864',
+                                borderRadius: '5px',
+                            }}
+                        >
+                            <img
+                                height="50"
+                                width="50"
+                                src={logo}
+                                alt="logo"
+                                loading="lazy"
+                                className=""
+                            />
+                        </span>
+
+                        <span className="d-flex flex-column">
+                            <span style={{ fontSize: '25px' }}>Employee</span>{' '}
+                            <span
+                                className="d-inline-block fw-normal"
+                                style={{
+                                    fontSize: '12px',
+                                    fontStyle: 'italic',
+                                    marginTop: '-2px',
+                                    color: '#025864',
+                                }}
+                            >
+                                {' '}
+                                Management
+                            </span>{' '}
+                        </span>
+                    </span>
+                </span>
+                <span className="small-logo">
                     <span
+                        className="d-inline-block"
                         style={{
                             border: '3px solid #025864',
                             borderRadius: '5px',
+                            height: '50px',
                         }}
                     >
                         <img
@@ -173,25 +215,9 @@ const DashboardLayout = () => {
                             className=""
                         />
                     </span>
-
-                    <span className="d-flex flex-column">
-                        <span style={{ fontSize: '25px' }}>Employee</span>{' '}
-                        <span
-                            className="d-inline-block fw-normal"
-                            style={{
-                                fontSize: '12px',
-                                fontStyle: 'italic',
-                                marginTop: '-2px',
-                                color: '#025864',
-                            }}
-                        >
-                            {' '}
-                            Management
-                        </span>{' '}
-                    </span>
                 </span>
-                <span className="small-logo d-none">EM</span>
             </div>
+
             <div
                 id="left-menu"
                 className={isSmallMenu ? 'small-left-menu' : ''}

@@ -7,33 +7,6 @@ import { FaRegBell } from 'react-icons/fa';
 import profileImg from '../../assets/image/profile.webp';
 import { Link } from 'react-router';
 
-const notificationData = [
-    {
-        id: '1',
-        text: 'A New  has just assigned to you.',
-        read: false,
-        createdAt: '2024-10-16T04:43:02.167+00:00',
-    },
-    {
-        id: '2',
-        text: 'A New  has just assigned to you.',
-        read: false,
-        createdAt: '2024-10-16T04:43:02.167+00:00',
-    },
-    {
-        id: '3',
-        text: 'A New  has just assigned to you.',
-        read: true,
-        createdAt: '2024-10-16T04:43:02.167+00:00',
-    },
-    {
-        id: '4',
-        text: 'A New  has just assigned to you.',
-        read: true,
-        createdAt: '2024-10-16T04:43:02.167+00:00',
-    },
-];
-
 const DashboardHeader = ({ isSmallMenu, toggleMenu }) => {
     return (
         <div

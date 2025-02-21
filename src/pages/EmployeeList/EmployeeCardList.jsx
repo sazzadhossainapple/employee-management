@@ -5,13 +5,11 @@ import axios from 'axios';
 
 const EmployeeCardList = () => {
     const [allEmployee, setAllEmployee] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     // get all employee
     const getPaginationList = async () => {
         const url = `${import.meta.env.VITE_API_KEY_URL}/api/employee`;
-
-        setIsLoading(true);
 
         try {
             const response = await axios.get(url, {
@@ -22,6 +20,8 @@ const EmployeeCardList = () => {
 
             setAllEmployee(response?.data?.data?.Employees || []);
         } catch (error) {
+            setIsLoading(false);
+
             console.error('Error fetching data:', error.message);
         } finally {
             setIsLoading(false);

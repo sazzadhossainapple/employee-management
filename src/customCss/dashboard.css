@@ -6,7 +6,7 @@
     margin-top: 2rem;
 }
 .containers {
-    /* height: 450px; */
+    height: 100%;
     width: 300px;
     background-size: cover;
     justify-content: center;
@@ -374,6 +374,9 @@
 /* overview css end */
 
 @media only screen and (min-width: 250px) and (max-width: 575px) {
+    .containers {
+        width: 100%;
+    }
     .chart-notification {
         display: flex;
         flex-direction: column;

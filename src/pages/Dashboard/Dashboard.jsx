@@ -8,7 +8,7 @@ import PieCharts from '../../components/PieCharts/PieCharts';
 
 const cardData = [
     {
-        count: '72',
+        count: '25',
         name: 'Total Employees',
         iconColor: '#00AC4F',
         iconBg: '#d3ffe7',
@@ -23,7 +23,7 @@ const cardData = [
     },
     {
         count: '56%',
-        name: 'Today Profit',
+        name: 'Today',
         iconColor: '#DA001A',
         iconBg: '#FFD4F3',
         icon: <FaChartBar />,

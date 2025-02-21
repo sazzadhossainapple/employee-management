@@ -12,7 +12,7 @@ const Employee = () => {
     const [limit, setLimit] = useState(10);
     const [pageCount, setPageCount] = useState(1);
     const currentPage = useRef(1);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [show, setShow] = useState(false);
     const [department, setDepartment] = useState('');
     const [status, setStatus] = useState('');
@@ -47,6 +47,7 @@ const Employee = () => {
             setPageCount(totalPages);
             setAllEmployee(response?.data?.data?.Employees || []);
         } catch (error) {
+            setIsLoading(false);
             console.error('Error fetching data:', error.message);
         } finally {
             setIsLoading(false);
@@ -75,7 +76,7 @@ const Employee = () => {
 
     return (
         <div>
-            <div className="d-flex justify-content-between align-items-center">
+            <div className="d-md-flex justify-content-between align-items-center">
                 <h2 className="dashboard-title">Employee</h2>
                 <div>
                     <button
