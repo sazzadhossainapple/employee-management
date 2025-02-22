@@ -129,7 +129,7 @@ const UpdateEmployee = ({
             </Modal.Header>
             <Modal.Body className="px-4 form-body">
                 <form className="row" onSubmit={handleSubmit(onSubmit)}>
-                    <div className="mb-3 col-6">
+                    <div className="mb-3 col-md-6">
                         <label className="mb-2 fw-medium form-label form-title-label">
                             Employee Name <sup className="text-danger">*</sup>
                         </label>
